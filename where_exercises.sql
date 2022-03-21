@@ -12,4 +12,4 @@ SELECT first_name FROM employees WHERE employees.employees.first_name IN ('Irena
 
 SELECT last_name FROM employees WHERE employees.employees.last_name LIKE '%E%';
 
-SELECT last_name FROM employees WHERE employees.employees.last_name LIKE '%q%' NOT LIKE '%qu%';
+SELECT last_name FROM employees WHERE employees.employees.last_name LIKE '%qu%';
