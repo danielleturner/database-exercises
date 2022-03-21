@@ -12,6 +12,7 @@ SELECT name FROM albums where artist_first_lastname = 'Micheal Jackson';
 
 UPDATE albums SET sales = (sales * 10);
 
-UPDATE albums SET release_date = 1800;
+UPDATE albums SET release_date = 1800 WHERE release_date = 1980;
 
-UPDATE albums SET artist_first_lastname = 'Peter Jackson' WHERE id = 63;
+UPDATE albums SET artist_first_lastname = 'Peter Jackson' WHERE artist_first_lastname = 'Michael Jackson';
+SELECT  * FROM albums;
