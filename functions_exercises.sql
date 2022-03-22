@@ -42,6 +42,8 @@ SELECT CONCAT(last_name, first_name)
     AND last_name LIKE '%E'
     AND first_name LIKE 'E%'
     AND first_name LIKE '%E';
+-- E% in front show words starting with E
+-- %E at the end shows words ending with E
 
 
 #3. Find all employees born on Christmas — 842 rows.
@@ -74,3 +76,27 @@ SELECT *, DATEDIFF(NOW(), hire_date)
     WHERE year(hire_date) BETWEEN 1990 AND 1999
     AND month(birth_date) = 12
     AND day(birth_date) = 25;
+-- in order to get datediff has to have to parameters(NOW(), hire_date How is current date and hire date is date hires. By adding the DATEDIFF it substract both now and hire date. In order to look through all employees the asterik is necessary but a comma needs to be added due to more than oaction things is beeing taken
+
+-- Kenneth extra questions--
+
+-- what are the top three most common job titles?
+
+SELECT COUNT(*), title FROM titles
+    GROUP BY title
+    ORDER BY COUNT(*) DESC
+    LIMIT 3;
+
+-- what is the lowest employee number for the first senior engineers in the company?
+
+SELECT emp_no
+    FROM titles
+    WHERE title = 'Senior Engineer'
+    ORDER BY from_date ASC
+    LIMIT 5;
+
+SELECT last_name, first_name
+    FROM employees
+    GROUP BY last_name, first_name;
+
+
